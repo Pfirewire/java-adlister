@@ -5,6 +5,8 @@ public class Author implements Serializable {
     private String firstName;
     private String lastName;
 
+    public Author() {}
+
     public long getId() {
         return this.id;
     }
