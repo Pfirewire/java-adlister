@@ -3,7 +3,7 @@ import java.io.Serializable;
 public class Quote implements Serializable {
     private long id;
     private String content;
-    private long authorId;
+    private Author author;
 
     public long getId() {
         return this.id;
@@ -13,8 +13,8 @@ public class Quote implements Serializable {
         return this.content;
     }
 
-    public long getAuthorId() {
-        return this.authorId;
+    public Author getAuthor() {
+        return this.author;
     }
 
     public void setId(long id) {
@@ -25,7 +25,7 @@ public class Quote implements Serializable {
         this.content = content;
     }
 
-    public void setAuthorId(long authorId) {
-        this.authorId = authorId;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }
