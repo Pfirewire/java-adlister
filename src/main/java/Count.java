@@ -1,5 +1,3 @@
-package com.codeup.adlister.controllers;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -7,19 +5,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/")
-
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name = "CountServlet", urlPatterns = "/count")
+public class Count extends HttpServlet{
+    private int count = 0;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        res.setContentType("text/html");
         PrintWriter out = res.getWriter();
-        String name =  req.getParameter("name");
-        if(name == null) {
-            out.println("<h1>Hello, World!</h1>");
+        String userReset = req.getParameter("reset");
+        if(userReset == null) {
+            count++;
         } else {
-            out.printf("<h1>Hello, %s!</h1>%n", name);
+            count = 1;
         }
+        out.printf("<h1>Counter: %s</hi>", count);
     }
 }
