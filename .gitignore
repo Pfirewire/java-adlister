@@ -1,4 +1,8 @@
 *.iml
 target/
 .idea/
+<<<<<<< HEAD
 Config.java
+=======
+Config.java
+>>>>>>> jdbc-exercise
