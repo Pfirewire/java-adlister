@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: pfirewire
@@ -14,5 +15,14 @@
 </head>
 <body>
     <jsp:include page="../partials/navbar.jsp" />
+
+    <h1>Herein Lies All the King's Ads:</h1>
+
+    <c:forEach var="ad" items="${ads}">
+        <div class="ad">
+            <h3>${ad.title}</h3>
+            <p>${ad.description}</p>
+        </div>
+    </c:forEach>
 </body>
 </html>
