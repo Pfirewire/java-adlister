@@ -16,25 +16,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
-
-    <%@ include file="partials/navbar.jsp" %>
-    <h1>Please Login</h1>
-
-    <form action="register" method="POST">
-
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text">
-        <br>
-
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password">
-        <br>
-
-        <input type="submit">
-    </form>
-
-
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <jsp:include page="partials/navbar.jsp" />
+    <div class="container">
+        <h1>Please Log In</h1>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" class="form-control" type="password">
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Log In">
+        </form>
+    </div>
 </body>
 </html>
