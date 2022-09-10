@@ -16,7 +16,10 @@ public class ViewAdServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ad", DaoFactory.getAdsDao().findById(request.getParameter("id")));
+        Ad ad = DaoFactory.getAdsDao().findById(request.getParameter("id"));
+        User user = DaoFactory.getUsersDao().findById(String.valueOf(ad.getUserId()));
+        request.setAttribute("ad", ad);
+        request.setAttribute("user", user);
         request.getRequestDispatcher("/WEB-INF/ads/view.jsp").forward(request, response);
     }
 }
