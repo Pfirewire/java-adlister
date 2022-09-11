@@ -5,14 +5,8 @@
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li>
-                <form action="/ads/search-result" method="POST">
-                    <input id="searchBar" name="searchBar" type="text">
-                    <button type="submit" value="search">Search</button>
-                </form>
-            </li>
             <li><a href="/login">Login</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/register">Register</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

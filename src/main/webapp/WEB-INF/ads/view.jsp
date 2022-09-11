@@ -6,6 +6,15 @@
   </jsp:include>
 </head>
 <body>
+<c:choose>
+  <c:when test="${sessionScope.user == null}">
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+  </c:when>
+  <c:otherwise>
+    <jsp:include page="/WEB-INF/partials/logged-in-navbar.jsp" />
+  </c:otherwise>
+</c:choose>
+
 <div class="container">
   <h1>${ad.title}</h1>
   <p>${ad.description}</p>
