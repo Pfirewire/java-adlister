@@ -39,6 +39,20 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
+    @Override
+    public List<Ad> searchAds(String search) {
+        if (ads == null) {
+            ads = generateAds();
+        }
+        List<Ad> containsSearch = new ArrayList<>();
+        for(Ad ad : ads) {
+            if(ad.getTitle().contains(search) || ad.getDescription().contains(search)) {
+                containsSearch.add(ad);
+            }
+        }
+        return containsSearch;
+    }
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
